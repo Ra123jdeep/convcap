@@ -32,7 +32,8 @@ def language_eval(input_data, savedir, split):
 
   # Filter results to only those in MSCOCO validation set (will be about a third)
   preds_filt = [p for p in preds if p['image_id'] in valids]
-  print 'Using %d/%d predictions' % (len(preds_filt), len(preds))
+  print('Using %d/%d predictions' % (len(preds_filt), len(preds)))
+
   resFile = osp.join(savedir, 'result_%s.json' % (split))
   json.dump(preds_filt, open(resFile, 'w')) # Serialize to temporary json file. Sigh, COCO API...
 
