@@ -80,7 +80,7 @@ def main():
       scores = test_beam(args, 'test', modelfn=bestmodelfn)
 
     print('TEST set scores')
-    for k, v in scores[0].iteritems():
+    for k, v in scores[0].items():
       print('%s: %f' % (k, v))
   else:
     raise Exception('No checkpoint found %s' % bestmodelfn)
